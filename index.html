@@ -1,535 +1,528 @@
-Enzo, você está absolutamente certo. Minha falha. Peço desculpas pela frustração.
-
-Desta vez, o arquivo foi gerado com **atenção cirúrgica** a cada detalhe e regra que você especificou. É a versão **FINAL e PERFEITA**, sem erros de formatação, com todos os caminhos e funções exatamente como você pediu.
-
-Este é o código que você pode salvar como `index.html` e usar imediatamente:
-
-html
-
-
-
-    
-    
-    Enzo & Mari ❤️ Nossa História
-    
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enzo & Mari ❤️ Nossa História</title>
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         * {
-            margin: 0;<br/>
-            padding: 0;<br/>
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;<br/>
-            background: #fff;<br/>
-            color: #1a1a1a;<br/>
+            font-family: 'Poppins', sans-serif;
+            background: #fff;
+            color: #1a1a1a;
             overflow-x: hidden;
         }
 
         .loading-screen {
-            position: fixed;<br/>
-            top: 0;<br/>
-            left: 0;<br/>
-            width: 100%;<br/>
-            height: 100%;<br/>
-            background: linear-gradient(135deg, #00C853 0%, #00E676 100%);<br/>
-            display: flex;<br/>
-            align-items: center;<br/>
-            justify-content: center;<br/>
-            z-index: 9999;<br/>
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #00C853 0%, #00E676 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
             transition: opacity 0.5s, visibility 0.5s;
         }
 
         .loading-screen.hidden {
-            opacity: 0;<br/>
+            opacity: 0;
             visibility: hidden;
         }
 
         .loading-content {
-            text-align: center;<br/>
+            text-align: center;
             color: white;
         }
 
         .loading-heart {
-            font-size: 80px;<br/>
+            font-size: 80px;
             animation: heartbeat 1.5s infinite;
         }
 
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }<br/>
-            25% { transform: scale(1.2); }<br/>
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
             50% { transform: scale(1); }
         }
 
         .loading-text {
-            font-size: 24px;<br/>
-            margin-top: 20px;<br/>
+            font-size: 24px;
+            margin-top: 20px;
             font-weight: 600;
         }
 
         .hero-fullscreen {
-            height: 100vh;<br/>
-            background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);<br/>
-            display: flex;<br/>
-            align-items: center;<br/>
-            justify-content: center;<br/>
-            position: relative;<br/>
+            height: 100vh;
+            background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
             overflow: hidden;
         }
 
         .hero-bg-hearts {
-            position: absolute;<br/>
-            width: 100%;<br/>
-            height: 100%;<br/>
+            position: absolute;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
         }
 
         .floating-heart {
-            position: absolute;<br/>
-            font-size: 50px;<br/>
-            opacity: 0.1;<br/>
+            position: absolute;
+            font-size: 50px;
+            opacity: 0.1;
             animation: floatUp 15s infinite;
         }
 
         @keyframes floatUp {
             0% {
-                transform: translateY(100vh) rotate(0deg);<br/>
+                transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
-            10% { opacity: 0.1; }<br/>
+            10% { opacity: 0.1; }
             90% { opacity: 0.1; }
             100% {
-                transform: translateY(-100vh) rotate(360deg);<br/>
+                transform: translateY(-100vh) rotate(360deg);
                 opacity: 0;
             }
         }
 
         .hero-content {
-            text-align: center;<br/>
-            z-index: 10;<br/>
+            text-align: center;
+            z-index: 10;
             animation: fadeInScale 1s ease-out;
         }
 
         @keyframes fadeInScale {
             from {
-                opacity: 0;<br/>
+                opacity: 0;
                 transform: scale(0.8);
             }
             to {
-                opacity: 1;<br/>
+                opacity: 1;
                 transform: scale(1);
             }
         }
 
         .hero-title {
-            font-size: 72px;<br/>
-            font-weight: 700;<br/>
-            background: linear-gradient(135deg, #00C853, #00E676);<br/>
-            -webkit-background-clip: text;<br/>
-            -webkit-text-fill-color: transparent;<br/>
-            background-clip: text;<br/>
+            font-size: 72px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00C853, #00E676);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 20px;
         }
 
         .hero-subtitle {
-            font-size: 28px;<br/>
-            color: #666;<br/>
+            font-size: 28px;
+            color: #666;
             font-weight: 300;
         }
 
         .hero-date {
-            font-size: 20px;<br/>
-            color: #00C853;<br/>
-            margin-top: 10px;<br/>
+            font-size: 20px;
+            color: #00C853;
+            margin-top: 10px;
             font-weight: 600;
         }
 
         .scroll-down {
-            position: absolute;<br/>
-            bottom: 40px;<br/>
-            left: 50%;<br/>
-            transform: translateX(-50%);<br/>
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
             animation: bounceArrow 2s infinite;
         }
 
         .scroll-down-arrow {
-            font-size: 40px;<br/>
+            font-size: 40px;
             color: #00C853;
         }
 
         @keyframes bounceArrow {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }<br/>
-            40% { transform: translateY(-20px) translateX(-50%); }<br/>
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
             60% { transform: translateY(-10px) translateX(-50%); }
         }
 
         .counter-section {
-            padding: 100px 20px;<br/>
-            background: linear-gradient(135deg, #00C853 0%, #00E676 100%);<br/>
-            color: white;<br/>
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #00C853 0%, #00E676 100%);
+            color: white;
             text-align: center;
         }
 
         .counter-title {
-            font-size: 48px;<br/>
-            font-weight: 700;<br/>
+            font-size: 48px;
+            font-weight: 700;
             margin-bottom: 60px;
         }
 
         .counter-grid {
-            display: grid;<br/>
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));<br/>
-            gap: 30px;<br/>
-            max-width: 1000px;<br/>
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .counter-box {
-            background: rgba(255, 255, 255, 0.2);<br/>
-            backdrop-filter: blur(20px);<br/>
-            border-radius: 24px;<br/>
-            padding: 40px 20px;<br/>
-            border: 2px solid rgba(255, 255, 255, 0.3);<br/>
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
             transition: transform 0.3s ease;
         }
 
-        .counter-box:hover {<br/>
+        .counter-box:hover {
             transform: translateY(-10px) scale(1.05);
         }
 
         .counter-number {
-            font-size: 56px;<br/>
-            font-weight: 700;<br/>
-            display: block;<br/>
+            font-size: 56px;
+            font-weight: 700;
+            display: block;
             margin-bottom: 10px;
         }
 
         .counter-label {
-            font-size: 16px;<br/>
-            text-transform: uppercase;<br/>
-            letter-spacing: 2px;<br/>
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             opacity: 0.9;
         }
 
         .gallery-section {
-            padding: 100px 20px;<br/>
+            padding: 100px 20px;
             background: #FAFAFA;
         }
 
         .section-header {
-            text-align: center;<br/>
+            text-align: center;
             margin-bottom: 60px;
         }
 
         .section-title {
-            font-size: 48px;<br/>
-            font-weight: 700;<br/>
-            color: #00C853;<br/>
+            font-size: 48px;
+            font-weight: 700;
+            color: #00C853;
             margin-bottom: 15px;
         }
 
         .section-subtitle {
-            font-size: 18px;<br/>
+            font-size: 18px;
             color: #666;
         }
 
         .photos-grid {
-            display: grid;<br/>
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));<br/>
-            gap: 20px;<br/>
-            max-width: 1200px;<br/>
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .photo-card {
-            position: relative;<br/>
-            aspect-ratio: 1;<br/>
-            border-radius: 20px;<br/>
-            overflow: hidden;<br/>
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);<br/>
-            cursor: pointer;<br/>
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
-        .photo-card:hover {<br/>
+        .photo-card:hover {
             transform: scale(1.05);
         }
 
         .photo-card img {
-            width: 100%;<br/>
-            height: 100%;<br/>
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
 
         .message-section {
-            padding: 100px 20px;<br/>
+            padding: 100px 20px;
             background: linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 100%);
         }
 
         .message-container {
-            max-width: 900px;<br/>
-            margin: 0 auto;<br/>
-            background: white;<br/>
-            border-radius: 32px;<br/>
-            padding: 60px;<br/>
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            padding: 60px;
             box-shadow: 0 20px 60px rgba(0, 200, 83, 0.15);
         }
 
         .message-icon {
-            font-size: 64px;<br/>
-            text-align: center;<br/>
+            font-size: 64px;
+            text-align: center;
             margin-bottom: 30px;
         }
 
         .message-title {
-            font-size: 36px;<br/>
-            color: #00C853;<br/>
-            text-align: center;<br/>
-            margin-bottom: 40px;<br/>
+            font-size: 36px;
+            color: #00C853;
+            text-align: center;
+            margin-bottom: 40px;
             font-weight: 700;
         }
 
         .message-text {
-            font-size: 20px;<br/>
-            line-height: 2;<br/>
-            color: #333;<br/>
+            font-size: 20px;
+            line-height: 2;
+            color: #333;
             text-align: justify;
         }
 
         .message-signature {
-            text-align: right;<br/>
-            margin-top: 40px;<br/>
-            font-size: 24px;<br/>
-            color: #00C853;<br/>
+            text-align: right;
+            margin-top: 40px;
+            font-size: 24px;
+            color: #00C853;
             font-weight: 600;
         }
 
         .music-player-fixed {
-            position: fixed;<br/>
-            bottom: 30px;<br/>
-            right: 30px;<br/>
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
             z-index: 1000;
         }
 
         .music-toggle-btn {
-            width: 70px;<br/>
-            height: 70px;<br/>
-            border-radius: 50%;<br/>
-            background: linear-gradient(135deg, #00C853, #00E676);<br/>
-            border: none;<br/>
-            color: white;<br/>
-            font-size: 32px;<br/>
-            cursor: pointer;<br/>
-            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.4);<br/>
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00C853, #00E676);
+            border: none;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.4);
             transition: transform 0.3s ease;
         }
 
-        .music-toggle-btn:hover {<br/>
+        .music-toggle-btn:hover {
             transform: scale(1.1);
         }
 
         .music-panel {
-            position: fixed;<br/>
-            bottom: 120px;<br/>
-            right: 30px;<br/>
-            width: 350px;<br/>
-            background: white;<br/>
-            border-radius: 24px;<br/>
-            padding: 30px;<br/>
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);<br/>
-            transform: translateY(20px);<br/>
-            opacity: 0;<br/>
-            visibility: hidden;<br/>
+            position: fixed;
+            bottom: 120px;
+            right: 30px;
+            width: 350px;
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            transform: translateY(20px);
+            opacity: 0;
+            visibility: hidden;
             transition: all 0.3s ease;
         }
 
         .music-panel.active {
-            transform: translateY(0);<br/>
-            opacity: 1;<br/>
+            transform: translateY(0);
+            opacity: 1;
             visibility: visible;
         }
 
         .music-info h3 {
-            font-size: 20px;<br/>
-            color: #1a1a1a;<br/>
+            font-size: 20px;
+            color: #1a1a1a;
             margin-bottom: 15px;
         }
 
         .music-url-input {
-            width: 100%;<br/>
-            padding: 12px;<br/>
-            border: 2px solid #E8F5E9;<br/>
-            border-radius: 12px;<br/>
-            font-size: 14px;<br/>
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E8F5E9;
+            border-radius: 12px;
+            font-size: 14px;
             margin-bottom: 15px;
         }
 
         .music-load-btn {
-            width: 100%;<br/>
-            padding: 12px;<br/>
-            background: linear-gradient(135deg, #00C853, #00E676);<br/>
-            color: white;<br/>
-            border: none;<br/>
-            border-radius: 12px;<br/>
-            font-size: 16px;<br/>
-            font-weight: 600;<br/>
-            cursor: pointer;<br/>
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #00C853, #00E676);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
             margin-bottom: 20px;
         }
 
         .player-controls {
-            display: flex;<br/>
-            align-items: center;<br/>
-            justify-content: center;<br/>
-            gap: 15px;<br/>
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
             margin: 20px 0;
         }
 
         .player-btn {
-            width: 50px;<br/>
-            height: 50px;<br/>
-            border-radius: 50%;<br/>
-            border: none;<br/>
-            background: #E8F5E9;<br/>
-            color: #00C853;<br/>
-            font-size: 20px;<br/>
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: #E8F5E9;
+            color: #00C853;
+            font-size: 20px;
             cursor: pointer;
         }
 
         .player-btn.play {
-            width: 60px;<br/>
-            height: 60px;<br/>
-            background: linear-gradient(135deg, #00C853, #00E676);<br/>
-            color: white;<br/>
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00C853, #00E676);
+            color: white;
             font-size: 24px;
         }
 
         .progress-bar-track {
-            width: 100%;<br/>
-            height: 6px;<br/>
-            background: #E8F5E9;<br/>
-            border-radius: 3px;<br/>
-            cursor: pointer;<br/>
+            width: 100%;
+            height: 6px;
+            background: #E8F5E9;
+            border-radius: 3px;
+            cursor: pointer;
             overflow: hidden;
         }
 
         .progress-bar-fill {
-            height: 100%;<br/>
-            background: linear-gradient(90deg, #00C853, #00E676);<br/>
-            width: 0%;<br/>
+            height: 100%;
+            background: linear-gradient(90deg, #00C853, #00E676);
+            width: 0%;
             transition: width 0.1s;
         }
 
         .time-labels {
-            display: flex;<br/>
-            justify-content: space-between;<br/>
-            margin-top: 8px;<br/>
-            font-size: 12px;<br/>
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 12px;
             color: #666;
         }
 
         .footer {
-            padding: 60px 20px;<br/>
-            background: #1a1a1a;<br/>
-            color: white;<br/>
+            padding: 60px 20px;
+            background: #1a1a1a;
+            color: white;
             text-align: center;
         }
 
-        @media (max-width: 768px) {<br/>
-            .hero-title { font-size: 48px; }<br/>
-            .hero-subtitle { font-size: 20px; }<br/>
-            .section-title { font-size: 32px; }<br/>
-            .counter-number { font-size: 40px; }<br/>
-            .message-container { padding: 30px; }<br/>
-            .message-title { font-size: 28px; }<br/>
+        @media (max-width: 768px) {
+            .hero-title { font-size: 48px; }
+            .hero-subtitle { font-size: 20px; }
+            .section-title { font-size: 32px; }
+            .counter-number { font-size: 40px; }
+            .message-container { padding: 30px; }
+            .message-title { font-size: 28px; }
             .message-text { font-size: 16px; }
             .music-panel {
-                width: calc(100% - 40px);<br/>
+                width: calc(100% - 40px);
                 right: 20px;
             }
         }
-    
+    </style>
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-heart">💚</div>
+            <div class="loading-text">Carregando nossa história...</div>
+        </div>
+    </div>
 
+    <div class="hero-fullscreen">
+        <div class="hero-bg-hearts" id="heartsContainer"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Enzo & Mari</h1>
+            <p class="hero-subtitle">Nossa história de amor</p>
+            <p class="hero-date">Desde 26 de Abril de 2025</p>
+        </div>
+        <div class="scroll-down">
+            <div class="scroll-down-arrow">↓</div>
+        </div>
+    </div>
 
-    
-        
-            💚
-            Carregando nossa história...
-        
-    
+    <section class="counter-section">
+        <h2 class="counter-title">Juntos há</h2>
+        <div class="counter-grid">
+            <div class="counter-box">
+                <span class="counter-number" id="years">0</span>
+                <span class="counter-label">Anos</span>
+            </div>
+            <div class="counter-box">
+                <span class="counter-number" id="months">0</span>
+                <span class="counter-label">Meses</span>
+            </div>
+            <div class="counter-box">
+                <span class="counter-number" id="days">0</span>
+                <span class="counter-label">Dias</span>
+            </div>
+            <div class="counter-box">
+                <span class="counter-number" id="hours">0</span>
+                <span class="counter-label">Horas</span>
+            </div>
+            <div class="counter-box">
+                <span class="counter-number" id="minutes">0</span>
+                <span class="counter-label">Minutos</span>
+            </div>
+            <div class="counter-box">
+                <span class="counter-number" id="seconds">0</span>
+                <span class="counter-label">Segundos</span>
+            </div>
+        </div>
+    </section>
 
-    
-        
-        
-            Enzo & Mari
-            Nossa história de amor
-            Desde 26 de Abril de 2025
-        
-        
-            ↓
-        
-    
+    <section class="gallery-section">
+        <div class="section-header">
+            <h2 class="section-title">Nossa Galeria</h2>
+            <p class="section-subtitle">Momentos especiais que guardamos no coração</p>
+        </div>
+        <div class="photos-grid">
+            <div class="photo-card">
+                <img src="foto1.jpg" alt="Enzo e Mari">
+            </div>
+            <div class="photo-card">
+                <img src="foto2.jpg" alt="Enzo e Mari">
+            </div>
+            <div class="photo-card">
+                <img src="foto3.jpg" alt="Enzo e Mari">
+            </div>
+            <div class="photo-card">
+                <img src="foto4.jpg" alt="Enzo e Mari">
+            </div>
+        </div>
+    </section>
 
-    
-        Juntos há
-        
-            
-                0
-                Anos
-            
-            
-                0
-                Meses
-            
-            
-                0
-                Dias
-            
-            
-                0
-                Horas
-            
-            
-                0
-                Minutos
-            
-            
-                0
-                Segundos
-            
-        
-    
-
-    
-        
-            Nossa Galeria
-            Momentos especiais que guardamos no coração
-        
-        
-            
-                
-            
-            
-                
-            
-            
-                
-            
-            
-                
-            
-        
-    
-
-    
-        
-            Mensagem Especial
-        
-        
-            💌
-            Para Mari, com todo meu amor
-            
+    <section class="message-section">
+        <div class="section-header">
+            <h2 class="section-title">Mensagem Especial</h2>
+        </div>
+        <div class="message-container">
+            <div class="message-icon">💌</div>
+            <h3 class="message-title">Para Mari, com todo meu amor</h3>
+            <p class="message-text">
                 Mari, eu te amo muito. Mesmo errando às vezes, eu sei que você também me ama.
                 Eu amo cada detalhe seu: seu olhinho castanho, que é apaixonante; esse sorriso que,
                 toda vez que eu vejo, me faz me apaixonar mais e mais; seu cabelo enroladinho, que é
@@ -538,45 +531,45 @@ html
                 extrovertida, engraçada e tem um humor muito quebrado, que eu adoro. Cada detalhe seu
                 é literalmente perfeito. Eu te amo muito mesmo. Me desculpa de verdade. Você é o amor
                 da minha vida. Beijinhos.
-            
-            ~ Enzo 💚
-        
-    
+            </p>
+            <div class="message-signature">~ Enzo 💚</div>
+        </div>
+    </section>
 
-    
-        💚
-        Feito com amor por Enzo para Mari
-        2025 - Para sempre
-    
+    <footer class="footer">
+        <div style="font-size: 48px; margin-bottom: 20px;">💚</div>
+        <p style="font-size: 18px;">Feito com amor por Enzo para Mari</p>
+        <p style="margin-top: 10px; opacity: 0.5;">2025 - Para sempre</p>
+    </footer>
 
-    
-        🎵
-        
-            
-                Nossa Música 💚
-            
-            
-            Carregar Música
+    <div class="music-player-fixed">
+        <button class="music-toggle-btn" onclick="toggleMusicPanel()">🎵</button>
+        <div class="music-panel" id="musicPanel">
+            <div class="music-info">
+                <h3 id="musicTitle">Nossa Música 💚</h3>
+            </div>
+            <input type="text" class="music-url-input" id="musicUrlInput" placeholder="Cole o link da música (MP3)">
+            <button class="music-load-btn" onclick="loadSong()">Carregar Música</button>
 
-            
-                ⏮️
-                ▶️
-                ⏭️
-            
+            <div class="player-controls">
+                <button class="player-btn" onclick="previousSong()">⏮️</button>
+                <button class="player-btn play" id="playButton" onclick="togglePlay()">▶️</button>
+                <button class="player-btn" onclick="nextSong()">⏭️</button>
+            </div>
 
-            
-                
-            
-            
-                0:00
-                0:00
-            
+            <div class="progress-bar-track" onclick="seekTo(event)">
+                <div class="progress-bar-fill" id="progressBar"></div>
+            </div>
+            <div class="time-labels">
+                <span id="currentTime">0:00</span>
+                <span id="totalTime">0:00</span>
+            </div>
 
-            
-        
-    
+            <audio id="audioElement"></audio>
+        </div>
+    </div>
 
-    
+    <script>
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loadingScreen').classList.add('hidden');
@@ -584,7 +577,7 @@ html
         });
 
         const heartsContainer = document.getElementById('heartsContainer');
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i &lt; 15; i++) {
             const heart = document.createElement('div');
             heart.className = 'floating-heart';
             heart.textContent = '💚';
@@ -604,7 +597,7 @@ html
             const hours = Math.floor(minutes / 60);
             const days = Math.floor(hours / 24);
             const years = Math.floor(days / 365);
-            const months = Math.floor(((days % 365) / 30)); // Aproximação para meses
+            const months = Math.floor((days % 365) / 30);
             const remainingDays = Math.floor((days % 365) % 30);
 
             document.getElementById('years').textContent = years;
@@ -619,7 +612,8 @@ html
         setInterval(updateCounter, 1000);
 
         const audioElement = document.getElementById('audioElement');
-        audioElement.src = "musica.mp3"; // MÚSICA: Carrega automaticamente o arquivo musica.mp3
+        audioElement.src = "musica.mp3"; 
+
         const playButton = document.getElementById('playButton');
         const progressBar = document.getElementById('progressBar');
         const currentTimeEl = document.getElementById('currentTime');
@@ -639,11 +633,6 @@ html
             }
             audioElement.src = url;
             document.getElementById('musicTitle').textContent = 'Música Carregada ✓';
-            if (isPlaying) {
-                audioElement.pause();
-                playButton.textContent = '▶️';
-                isPlaying = false;
-            }
         }
 
         function togglePlay() {
@@ -652,8 +641,8 @@ html
                 playButton.textContent = '▶️';
             } else {
                 audioElement.play().catch(e => {
-                    console.error("Erro ao tentar tocar a música:", e);
-                    alert("O navegador pode ter bloqueado a reprodução automática. Tente interagir com a página ou verificar o arquivo 'musica.mp3'.");
+                    console.error("Erro ao tocar:", e);
+                    alert("Clique no Play novamente ou verifique o arquivo 'musica.mp3'");
                 });
                 playButton.textContent = '⏸️';
             }
@@ -677,12 +666,11 @@ html
             audioElement.currentTime = audioElement.duration * percentage;
         }
 
-        // JAVASCRIPT: Função formatTime EXATA como especificado
         function formatTime(seconds) {
-            if (isNaN(seconds) || seconds < 0) return '0:00';
+            if (isNaN(seconds) || seconds &lt; 0) return '0:00';
             const mins = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
-            return `${mins}:${secs.toString().padStart(2, "0")}`;
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
         }
 
         audioElement.addEventListener('timeupdate', () => {
@@ -705,5 +693,6 @@ html
         document.querySelector('.scroll-down').addEventListener('click', () => {
             document.querySelector('.counter-section').scrollIntoView({ behavior: 'smooth' });
         });
-    
-
+    </script>
+</body>
+</html>
